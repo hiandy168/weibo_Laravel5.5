@@ -12,6 +12,7 @@
 */
 
 require __DIR__.'/helpers.php';
+
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );

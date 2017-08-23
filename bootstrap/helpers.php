@@ -9,7 +9,15 @@ function get_db_config()
             'host' => $url['host'],
             'database' => substr($url['path'], 1),
             'username' => $url['user'],
-            'password' => $url['password'],
+            'password' => $url['pass'],
+        ];
+    } else {
+        return $db_config = [
+            'connection' => env('DB_CONNECTION', 'mysql'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
         ];
     }
 }
